@@ -1,4 +1,4 @@
-### DNS-to-DNS-over-TLS-proxy
+# DNS-to-DNS-over-TLS-proxy
 DNS-Over-TLS server is use to send DNS queries over an encrypted connection, by default, DNS query is sent over the plain text connection.
 In this project, DNS-over-TLS proxy server is accepting UDP DNS request from the client and convert it into TCP and send it as a query to CLOUDFLARE DNS-over-TLS server. After getting result from cloudflare it will convert that into UDP again and respond to client.
 
@@ -14,7 +14,7 @@ In this server, I have used Cloudflare dns-over-tls (1.1.1.1) for quering the cl
 * RequestHandler will call the function to create TLS connection cloudflare dns server and after that convert UDP request into TCP DNS query and send it to Cloudflare DNS server over the tcp connection, when the server got TCP answer from Cloudflare DNS server, it will convert it into UDP and respond to the client over the same Docker network socket connection
 * Currently, It is handling nslookup and dig requests
 
-# Installing
+### Installing
 
 To run this project:
 * Create docker image by using Dockerfile which is in the root directory by run this command:
