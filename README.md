@@ -19,8 +19,12 @@ In this server, I have used Cloudflare dns-over-tls (1.1.1.1) for quering the cl
 To run this project:
 * Create docker image by using Dockerfile which is in the root directory by run this command:
   - docker build -t dns-server .
+* Create docker network by using this command:
+  - docker network create --subnet 172.168.1.0/24 testNetwork
 * Run the container by using that docker image we created in the previous step by run this command:
   - docker run --net testNetwork  -it dns-server
+* Update your /etc/resolv.conf file for the nslookup by adding the nameserver entry:
+  - nameserver 172.168.1.2  #container local ip
 * You can test this by making nslookup or dig request
   - nslookup yahoo.com
   - dig @172.168.1.2 -p 53 google.com
