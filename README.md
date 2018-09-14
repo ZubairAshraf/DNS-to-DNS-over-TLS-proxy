@@ -40,7 +40,7 @@ And some could get access to the buffer also to get the stored/cached informatio
 
 ### Microservices Architecture
 
-It is better to take this in microservice due to being highly available and scalable, and security is dependent on the designed security of the whole microservices environment, just like If we are running these in docker containers, containers are not that highly isolated as compare to VMs. And they are shairng the same Kernal host and also communicate with eachother on the same host.
+It is better to take this in microservice due to being highly available and scalable, and security is dependent on the designed security of the whole microservices environment, just like If we are running these in docker containers, containers are not that highly isolated as compare to VMs. And they are shairng the same Kernal host and can also communicate with eachother on the same host.
 
 ## Improvements
 
