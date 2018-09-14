@@ -11,7 +11,7 @@ Code is written in Python2.7
 In this server, I have used Cloudflare dns-over-tls (1.1.1.1) for quering the client requests.
 * It will create a socket connection and bind it with the Docker's network (172.168.1.2) on port 53
 * Receive UDP DNS requests on this connection and create a thread for the request and run requesthandler
-* RequestHandler will call the function to create TLS connection cloudflare dns server on port 853 and after that convert UDP request into TCP DNS query and send it to Cloudflare DNS server over the tcp connection, when the server got TCP answer from Cloudflare DNS server, it will convert it into UDP and respond to the client over the same Docker network socket connection
+* RequestHandler will call the function to create TLS connection cloudflare dns server on port 853 using self-signed certificate and after that convert UDP request into TCP DNS query and send it to Cloudflare DNS server over the tcp connection, when the server got TCP answer from Cloudflare DNS server, it will convert it into UDP and respond to the client over the same Docker network socket connection
 * Currently, It is handling nslookup and dig requests
 
 ### Installing
@@ -48,5 +48,5 @@ There are alot more things that we can add in this project:
 * Caching feature (store new results into the buffer for the better performance)
 * Can reduce overhead of TLS connection and the handshake process again and again on each request, by checking the client addr. Application should have to maintain the socket connections for the specific time period.
 * We can also add other available DNS-over-TLS servers like Quad9 and Cleanbrowsing.
-* Handle requests from browser directly, by updating the iptables may be or adding our own proxy ip in the browser settings (I haven't tested that thing yet on it)
+* Handle requests from browser directly, by updating the iptables may be or adding our own proxy ip in the browser settings.
 * Block ip, if dns server is getting too much requests from the same ip in the specific time period.
