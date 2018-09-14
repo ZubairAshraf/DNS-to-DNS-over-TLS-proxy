@@ -30,3 +30,14 @@ To run this project:
   - dig @172.168.1.2 -p 53 google.com
 * On successfull response server will give 200 response code
 
+## Security concerns
+
+Everything has its pros and cons. Here we are using TLS/TCP to secure our pipelines and send DNS queries over those encrypted pipeline.
+But there are also some known security concerns with TLS, when browser send request to the DNS proxy server and then proxy server will create TCP connection with Upstream DNS server, man-in-the-middle can spoof traffic between browser and dns server and add/edit datagram and send it over the TCP connection. 
+
+And some could get access to the buffer also to get the stored/cached information about the domain names. Also, there are some OpenSSL concerns involved but it can overcome by using the proper keys and signed certificates.
+
+### Microservices Architecture
+
+It is better to take this in microservice due to being highly available and scalable, and security is dependent on the designed security of the whole microservices environment, just like If we are running these in docker containers, containers are not that highly isolated as compare to VMs. And they are shairng the same Kernal host and also communicate with eachother on the same host.
+
