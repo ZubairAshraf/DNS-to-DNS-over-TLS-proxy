@@ -27,6 +27,7 @@ To run this project:
   - nameserver 172.168.1.2  #container local ip
 * You can test this by making nslookup or dig request
   - nslookup yahoo.com
+  - nslookup -type=aaaa www.google.com
   - dig @172.168.1.2 -p 53 google.com
 * On successfull response server will give 200 response code
 
@@ -41,3 +42,6 @@ And some could get access to the buffer also to get the stored/cached informatio
 
 It is better to take this in microservice due to being highly available and scalable, and security is dependent on the designed security of the whole microservices environment, just like If we are running these in docker containers, containers are not that highly isolated as compare to VMs. And they are shairng the same Kernal host and also communicate with eachother on the same host.
 
+## Improvements
+
+There are alot more things that we can add in this project
