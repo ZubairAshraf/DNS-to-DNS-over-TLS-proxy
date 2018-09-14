@@ -4,7 +4,7 @@ This project is to design and develop a DNS proxy. A DNS proxy is a DNS forwarde
 
 ## Getting Started
 
-Source code: myserver.py
+Source code: DNS-TLS-server-proxy.py
 
 Code is written in Python2.7
 
