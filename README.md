@@ -29,7 +29,7 @@ To run this project:
   - nslookup yahoo.com
   - nslookup -type=aaaa www.google.com
   - dig @172.168.1.2 -p 53 google.com
-* On successfull response server will give 200 response code
+* On successful response server will give 200 response code
 
 ## Security concerns
 
