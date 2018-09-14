@@ -44,4 +44,9 @@ It is better to take this in microservice due to being highly available and scal
 
 ## Improvements
 
-There are alot more things that we can add in this project
+There are alot more things that we can add in this project:
+* Caching feature (store new results into the buffer for the better performance)
+* Can reduce overhead of TLS connection and the handshake process again and again on each request, by checking the client addr. Application should have to maintain the socket connections for the specific time period.
+* We can also add other available DNS-over-TLS servers like Quad9 and Cleanbrowsing.
+* Handle requests from browser directly, by updating the iptables may be or adding our own proxy ip in the browser settings (I haven't tested that thing yet on it)
+* Block ip, if dns server is getting too much requests from the same ip in the specific time period.
